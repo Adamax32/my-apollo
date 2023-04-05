@@ -20,7 +20,7 @@ export const Router = () => {
           </Route>
           <Route path="starships" >
             <Route index element={<StarshipPage />} />
-            <Route path=":id" element={<CharacterDetailPage />} />
+            {/* <Route path=":id" element={<CharacterDetailPage />} /> */}
           </Route>
         </Route>
       </Routes>

@@ -36,3 +36,15 @@ query GET_CHARACTER_DETAIL($personId: ID) {
   }
 }
 `;
+
+export const  GET_ALL_STARSHIPS= gql`
+query GET_ALL_STARSHIPS {
+  allStarships {
+    starships {
+      id
+      name
+    }
+  }
+}
+
+`;
