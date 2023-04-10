@@ -4,36 +4,32 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { ErrorMessage } from "../components/ErrorMessage";
 import { Loading } from "../components/Loading";
-import { FilmDetailSummary } from "../modules/films/FilmDetailSummary";
-import { GET_FILM_DETAIL } from "../modules/films/queries";
-import { PlanetList } from "../modules/planets/PlanetList";
+import { GET_STARSHIP_DETAIL } from "../modules/films/queries";
 
-export const FilmDetailPage = () => {
+
+export const StarshipDetailPage = () => {
   const { id } = useParams();
 
-  const { data, loading, error } = useQuery(GET_FILM_DETAIL, {
-    variables: { filmId: id },
+  const { data, loading, error } = useQuery(GET_STARSHIP_DETAIL, {
+    variables: { starshipId: id },
   });
 
   if (error) return <ErrorMessage error={error} />;
 
   if (loading) return <Loading />;
 
-  const film = data.film;
+  const ship = data.starship;
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} style={{ backgroundColor: 'purple' }}>
       <Grid item xs={12}>
-        <Typography variant="h4">{film.title}</Typography>
-        <FilmDetailSummary
-          director={film.director}
-          openingCrawl={film.openingCrawl}
-          producers={film.producers}
-        />
+        <Typography color='white' fontFamily="'Times New Roman', serif" variant="h1">{ship.name}</Typography>
+
+        <Typography  fontFamily="'Times New Roman', serif" variant="h2">Created:{ship.created}</Typography>
+        <Typography  fontFamily="'Times New Roman', serif" variant="h2">maxAtmospheringSpeed: {ship.maxAtmospheringSpeed} </Typography>
+        <Typography  fontFamily="'Times New Roman', serif" variant="h3">hyperdriveRating:{ship.hyperdriveRating}</Typography>
       </Grid>
-      <Grid item xs={12}>
-        <Typography variant="h4">Planets</Typography>
-        <PlanetList planets={film.planetConnection.planets} />
-      </Grid>
+
+   
     </Grid>
   );
 };

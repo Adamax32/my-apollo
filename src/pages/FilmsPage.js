@@ -12,8 +12,8 @@ export const FilmsPage = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         minHeight: '100vh',
-        width: '80vw', // Add this line to set the width
-        margin: '0 auto', // Add this line to center the container horizontally
+        width: '80vw', 
+        margin: '0 auto',
       }}
     >
       <Grid container spacing={2} justifyContent="center" alignItems="center">
@@ -22,9 +22,12 @@ export const FilmsPage = () => {
             Films
           </Typography>
         </Grid>
+
         <Grid item xs={10} sx={{ marginLeft: '50px' }}>
           <FilmList />
         </Grid>
+
+        
       </Grid>
 
     </div>
