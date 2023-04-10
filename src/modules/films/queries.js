@@ -48,3 +48,17 @@ query GET_ALL_STARSHIPS {
 }
 
 `;
+
+export const  GET_STARSHIP_DETAIL = gql`
+query  GET_STARSHIP_DETAI($starshipId: ID) {
+  starship(id: $starshipId) {
+    name
+    created
+    maxAtmospheringSpeed
+    hyperdriveRating
+  }
+    
+  }
+
+`;
+

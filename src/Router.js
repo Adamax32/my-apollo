@@ -6,6 +6,7 @@ import { FilmsPage } from "./pages/FilmsPage";
 import { HomePage } from "./pages/HomePage";
 import { StarshipPage } from "./pages/StarshipPage";
 import { CharacterDetailPage } from "./pages/CharacterDetailPage";
+import { StarshipDetailPage } from "./pages/SSDetailPage";
 
 export const Router = () => {
   return (
@@ -20,7 +21,7 @@ export const Router = () => {
           </Route>
           <Route path="starships" >
             <Route index element={<StarshipPage />} />
-            {/* <Route path=":id" element={<CharacterDetailPage />} /> */}
+            <Route path=":id" element={<StarshipDetailPage />} />
           </Route>
         </Route>
       </Routes>

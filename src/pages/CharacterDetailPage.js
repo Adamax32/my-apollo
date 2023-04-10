@@ -22,21 +22,15 @@ export const CharacterDetailPage = () => {
   return (
     <Grid container spacing={2} style={{ backgroundColor: 'blue' }}>
       <Grid item xs={12}>
-        <Typography color='white' variant="h1">{character.name}</Typography>
-        <Typography variant="h2">Gender:{character.gender}</Typography>
+        <Typography color='white' fontFamily="'Times New Roman', serif" variant="h1">{character.name}</Typography>
+        <Typography fontFamily="'Times New Roman', serif" variant="h2">Gender:{character.gender}</Typography>
         
-        <Typography variant="h2">Homeworld - {character.homeworld.name} </Typography>
-        <Typography variant="h3">Population:{character.homeworld.population}</Typography>
+        <Typography fontFamily="'Times New Roman', serif" variant="h2">Homeworld - {character.homeworld.name} </Typography>
+        <Typography fontFamily="'Times New Roman', serif" variant="h3">Population:{character.homeworld.population}</Typography>
       </Grid>
    
     </Grid>
 
-    // <Grid container spacing={2}>
-    //   <Grid item xs={12}>
-    //     <Typography variant="h4">{character.name} {character.gender}</Typography>
-
-    //   </Grid>
-
-    // </Grid>
+  
   );
 };
